@@ -7,17 +7,26 @@ import org.nocrala.tools.texttablefmt.Table;
 import java.util.List;
 
 public class View {
-    public static void printAppMenu() {
-        System.out.println("Welcome to JDBC System");
-        System.out.println("--------------");
-        System.out.println("""
-                1. List Articles
-                2. Add Article
-                3. Update Article
-                4. Delete Article
-                5. Exit
-                """);
-    }
+//    public static void printAppMenu() {
+//        System.out.println("Welcome to JDBC System");
+//        System.out.println("--------------");
+//        System.out.println("""
+//                1. List Articles
+//                2. Add Article
+//                3. Update Article
+//                4. Delete Article
+//                5. Exit
+//                """);
+//    }
+public static void printAppMenu() {
+    Table table = new Table(1, BorderStyle.UNICODE_ROUND_BOX_WIDE);
+    table.addCell("               Application Menu                ");
+    table.addCell("   1)List All  2)Search  3)Add new  4)Update   ");
+    table.addCell("               5)Delete  0)Exit                ");
+    print(table.render(), true);
+}
+
+
     public static void table(Items items) {
         Table table = new Table(6, BorderStyle.UNICODE_ROUND_BOX_WIDE);
 
